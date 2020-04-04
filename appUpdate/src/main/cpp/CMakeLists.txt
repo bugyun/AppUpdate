@@ -1,12 +1,9 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-# 压缩c++代码体积
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS}   -O0 -Wall -g2 -ggdb")
+# DEBUG 不压缩
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS}  -O0 -Wall -g2 -ggdb")
+# RELEASE 压缩c++代码体积
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS}  -Os -Wall -s")
-
-# 构建目标时，要求编译器对目标占用的空间进行优化。
-
-
 
 # 添加头文件地址 .h
 include_directories(${CMAKE_SOURCE_DIR}/core)
